@@ -4,5 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.create params.require(:user).permit(:email)
   end
 end

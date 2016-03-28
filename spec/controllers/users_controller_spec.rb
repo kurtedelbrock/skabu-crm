@@ -10,4 +10,14 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe "POST create" do
+    context 'with valid user' do
+      let(:user) { build :user }
+      it 'should save' do
+        post :create, { user: user.attributes }
+        expect(User.first.email).to eq(user.email)
+      end
+    end
+  end
 end
