@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#email' do
+    let(:user) { User.new }
+
+    it 'should exist' do
+      expect(user.attributes).to include("email")
+    end
+  end
 end
